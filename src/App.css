@@ -1,32 +1,203 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.iphone-x {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  width: 340px;
+  height: 694px;
+  background-color: #1c1c1c;
+  border-radius: 54px;
+  box-shadow: inset 0 0 2px 2px dimgrey,
+  inset 0 0 0 6px #e2e3e9,
+  0 -1px 13px 9px rgba(255, 255, 255, 0.8) inset;
+  padding: 15px 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.visor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+  left: calc(50% - 82px);
+  width: 164px;
+  height: 24px;
+  background-color: #1c1c1c;
+  border-bottom-left-radius: 13px;
+  border-bottom-right-radius: 13px;
+  z-index: 200;
+}
+
+.infrared-camera {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #2e2e2e;
+  width: 8px;
+  height: 8px;
+  margin: 0 10px;
+  border: 2px solid #383838;
+}
+
+.infrared-camera::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: #292929;
+  border-radius: 50%;
+}
+
+.proximity-sensor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #303030;
+  width: 12px;
+  height: 12px;
+}
+
+.speaker {
+  width: 40px;
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  margin: 0 15px;
+}
+
+.camera {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #2e2e2e;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #383838;
+}
+
+.camera::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: #292929;
+  border-radius: 50%;
+}
+
+.dot-projector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #2e2e2e;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #383838;
+  margin: 0 10px;
+}
+
+.dot-projector::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: #292929;
+  border-radius: 50%;
+}
+
+.volume-button {
+  background: #c8cacb;
+  height: 26px;
+  left: -2px;
+  position: absolute;
+  top: 92px;
+  width: 3px;
+}
+
+.volume-button::before,
+.volume-button::after {
+  content: "";
+  position: absolute;
+  background: #c8cacb;
+  height: 50px;
+  left: 0;
+  width: 3px;
+}
+
+.volume-button::before {
+  top: 112px;
+}
+
+.volume-button::after {
+  top: 48px;
+}
+
+.power-button {
+  background: #c8cacb;
+  height: 80px;
+  right: -2px;
+  position: absolute;
+  top: 160px;
+  width: 3px;
+}
+
+.calculator {
+  display: grid;
+  margin-bottom: 80px;
+  grid-template-columns: repeat(4, 65px);
+  grid-template-rows: repeat(6, 65px);
+  grid-gap: 10px;
+  grid-template-areas:
+          "input input input input"
+          "clear plus-minus percent divide"
+          "digit digit digit multiply"
+          "digit digit digit minus"
+          "digit digit digit plus"
+          "digit digit digit equally";
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  flex: 1;
+  padding: 0;
+  border-radius: 50px;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  outline: none;
+  transition: opacity .15s linear;
+  opacity: .8;
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.btn-gray {
+  background-color: #919191;
+  color: #1c1c1c;
+}
+
+.btn-orange {
+  background-color: #e28e00;
+}
+
+.btn-dark {
+  background-color: #303030;
 }
