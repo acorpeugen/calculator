@@ -1,0 +1,46 @@
+.calculator {
+  display: grid;
+  margin-bottom: 80px;
+  grid-template-columns: repeat(4, 65px);
+  grid-template-rows: repeat(6, 65px);
+  grid-gap: 10px;
+  grid-template-areas:
+    "input input input input"
+    "function function function operation"
+    "digit digit digit operation"
+    "digit digit digit operation"
+    "digit digit digit operation"
+    "digit digit digit operation";
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  flex: 1;
+  padding: 0;
+  background-color: #303030;
+  border-radius: 50px;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  color: #fff;
+  opacity: .8;
+  transition: opacity .15s linear;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.btn-gray {
+  background-color: #919191;
+  color: #1c1c1c;
+}
+
+.btn-orange {
+  background-color: #e28e00;
+}
