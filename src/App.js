@@ -1,46 +1,106 @@
 import React, {Component} from 'react';
-import ExpressionInput from './components/expression-input/ExpressionInput';
-import ClearButton from './components/operations-buttons/ClearButton';
-import PercentButton from './components/operations-buttons/PercentButton';
-import PlusMinusButton from './components/operations-buttons/PlusMinusButton';
-import DigitButtons from './components/digit-buttons/DigitButtons';
-import Divide from './components/operations-buttons/Divide';
-import Multiply from './components/operations-buttons/Multiply';
-import Minus from './components/operations-buttons/Minus';
-import Plus from './components/operations-buttons/Plus';
-import Equally from './components/operations-buttons/Equally';
-import './App.css';
+import Controls from './PhoneControls/index';
+import Calculator from './Calculator/index';
+import './App.scss';
 
-class App extends Component {
+
+export default class App extends Component {
+
   render() {
-    return (
-        <div className="iphone-x">
-          {/* Iphone-x elements for visualisation controls */}
-          <div className="visor">
-            <span className="infrared-camera"/>
-            <span className="proximity-sensor"/>
-            <span className="speaker"/>
-            <span className="camera"/>
-            <span className="dot-projector"/>
-          </div>
-          <div className="volume-button"/>
-          <div className="power-button"/>
 
-          <div className="calculator">
-            <ExpressionInput/>
-            <ClearButton/>
-            <PercentButton/>
-            <PlusMinusButton/>
-            <DigitButtons/>
-            <Divide/>
-            <Multiply/>
-            <Minus/>
-            <Plus/>
-            <Equally/>
-          </div>
-        </div>
+    const calculator = [
+      {
+        id: 1,
+        functionData: [
+          {
+            id: 1,
+            value: 'AC'
+          },
+          {
+            id: 2,
+            value: '%'
+          },
+          {
+            id: 3,
+            value: '+/-'
+          }
+        ],
+        operationData: [
+          {
+            id: 1,
+            value: '/'
+          },
+          {
+            id: 2,
+            value: '*'
+          },
+          {
+            id: 3,
+            value: '-'
+          },
+          {
+            id: 4,
+            value: '+'
+          },
+          {
+            id: 5,
+            value: '='
+          }
+        ],
+        digitData: [
+          {
+            id: 1,
+            value: 7
+          },
+          {
+            id: 2,
+            value: 8
+          },
+          {
+            id: 3,
+            value: 9
+          },
+          {
+            id: 4,
+            value: 4
+          },
+          {
+            id: 5,
+            value: 5
+          },
+          {
+            id: 6,
+            value: 6
+          },
+          {
+            id: 7,
+            value: 1
+          },
+          {
+            id: 8,
+            value: 2
+          },
+          {
+            id: 9,
+            value: 3
+          },
+          {
+            id: 10,
+            value: 0
+          },
+          {
+            id: 11,
+            value: '.'
+          },
+        ]
+      }
+    ];
+
+    return (
+      <div className="phone">
+        <Controls/>
+        {calculator.map(calc => <Calculator calc={calc} key={calc.id} />)}
+      </div>
     );
   }
 }
-
-export default App;
