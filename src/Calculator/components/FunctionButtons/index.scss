@@ -1,0 +1,7 @@
+.function-buttons {
+  grid-area: function;
+  display: grid;
+  grid-template-columns: repeat(3, 65px);
+  grid-template-rows: repeat(1, 65px);
+  grid-gap: 10px;
+}
