@@ -5,7 +5,6 @@ export default class FunctionButtons extends Component {
   render() {
 
     const {
-      value,
       onClear,
       onPercent,
       onPlusMinus
@@ -13,9 +12,9 @@ export default class FunctionButtons extends Component {
 
     return (
       <div className="function-buttons">
-        <button type="reset" value={value} className="btn btn-gray" onClick={onClear} />
-        <button type="button" value={value} className="btn btn-gray" onClick={onPercent} />
-        <button type="button" value={value} className="btn btn-gray" onClick={onPlusMinus} />
+        <button type="reset" value="AC" className="btn btn-gray" onClick={onClear}>{}</button>
+        <button type="button" value="%" className="btn btn-gray" onClick={onPercent}>{}</button>
+        <button type="button" value="+/-" className="btn btn-gray" onClick={onPlusMinus}>{}</button>
       </div>
     );
   }
