@@ -12,6 +12,8 @@ export default class Calculator extends Component {
     const {
       calc
     } = this.props;
+  
+    console.log(OperationButtons);
 
     return (
       <div className="calculator" key={calc.id}>
@@ -21,18 +23,19 @@ export default class Calculator extends Component {
           onPercent={this.Percent}
           onPlusMinus={this.PlusMinus}
         />
-        <DigitButtons onDigit={this.Digit} />
+        <DigitButtons digitData={calc.digitData} />
         <OperationButtons
-          value={calc.operationData.value}
+          value={this.value}
           onDivide={this.Divide}
           onMultiply={this.Multiply}
           onMinus={this.Minus}
           onPlus={this.Plus}
           onEqually={this.Equally}
         />
-      </div>  
+      </div>
     );
   };
+  
 
   /* Function Buttons Verification Handel Click */ 
   Clear = () => {
