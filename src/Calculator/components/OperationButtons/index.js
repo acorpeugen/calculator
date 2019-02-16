@@ -15,11 +15,11 @@ export default class OperationButtons extends Component {
 
     return (
       <div className="operation-buttons">
-        <button type="button" value={value} className="btn btn-orange" onClick={onDivide} />
-        <button type="button" value={value} className="btn btn-orange" onClick={onMultiply} />
-        <button type="button" value={value} className="btn btn-orange" onClick={onMinus}/>
-        <button type="button" value={value} className="btn btn-orange" onClick={onPlus}/>
-        <button type="button" value={value} className="btn btn-orange" onClick={onEqually}/>
+        <button type="button" value="/" className="btn btn-orange" onClick={onDivide}>{}</button>
+        <button type="button" value="*" className="btn btn-orange" onClick={onMultiply}>{}</button>
+        <button type="button" value="-" className="btn btn-orange" onClick={onMinus}>{}</button>
+        <button type="button" value="+" className="btn btn-orange" onClick={onPlus}>{}</button>
+        <button type="button" value="=" className="btn btn-orange" onClick={onEqually}>{}</button>
       </div>
     );
   }
