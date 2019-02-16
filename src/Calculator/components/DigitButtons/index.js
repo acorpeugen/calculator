@@ -1,29 +1,19 @@
 import React, {Component} from 'react';
 import './index.scss';
+import Calculator from "../../../App";
 
 export default class DigitButtons extends Component {
   
   render() {
 
     const {
-      value,
-      onDigit
+      digitData
     } = this.props;
 
     return (
       <div className="digit-buttons">
-        <button className="btn" value={value} onClick={onDigit}/>
-        <button className="btn" value={value} onClick={onDigit}/>
-        <button className="btn" value={value} onClick={onDigit}/>
-        <button className="btn" value={value} onClick={onDigit}/>
-        <button className="btn" value={value} onClick={onDigit}/>
-        <button className="btn" value={value} onClick={onDigit}/>
-        <button className="btn" value={value} onClick={onDigit}/>
-        <button className="btn" value={value} onClick={onDigit}/>
-        <button className="btn" value={value} onClick={onDigit}/>
-        <button className="btn" value={value} onClick={onDigit}/>
-        <button className="btn" value={value} onClick={onDigit}/>
+        {digitData.map(digit => <button key={digit.id} className="btn">{digit.value}</button>)}
       </div>
     );
   }
-}
+};
