@@ -5,16 +5,12 @@ export default class FunctionButtons extends Component {
   render() {
 
     const {
-      onClear,
-      onPercent,
-      onPlusMinus
+      functionData
     } = this.props;
 
     return (
       <div className="function-buttons">
-        <button type="reset" value="AC" className="btn btn-gray" onClick={onClear}>{}</button>
-        <button type="button" value="%" className="btn btn-gray" onClick={onPercent}>{}</button>
-        <button type="button" value="+/-" className="btn btn-gray" onClick={onPlusMinus}>{}</button>
+        {functionData.map(func => <button key={func.id} className="btn btn-gray">{func.value}</button>)}
       </div>
     );
   }
