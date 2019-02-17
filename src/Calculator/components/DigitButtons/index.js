@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './index.scss';
-import Calculator from "../../../App";
 
 export default class DigitButtons extends Component {
   
