@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import Controls from './PhoneControls/index';
 import Calculator from './Calculator/index';
 import './App.scss';
-
 
 export default class App extends Component {
   
@@ -20,7 +18,7 @@ export default class App extends Component {
         },
         {
           id: 3,
-          value: '+/-'
+          value: '+ / -'
         }
       ],
       operationData: [
@@ -98,7 +96,17 @@ export default class App extends Component {
 
     return (
       <div className="phone">
-        <Controls/>
+        <>
+          <div className="visor">
+            <span className="infrared-camera"/>
+            <span className="proximity-sensor"/>
+            <span className="speaker"/>
+            <span className="camera"/>
+            <span className="dot-projector"/>
+          </div>
+          <div className="volume-button"/>
+          <div className="power-button"/>
+        </>
         {this.calculator.map(calc => <Calculator calc={calc} key={calc.id} />)}
       </div>
     );
