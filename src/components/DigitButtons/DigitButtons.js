@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
-import './index.scss';
+import CalculatorContext from "../../context";
+import './DigitButtons.scss';
 
 export default class DigitButtons extends Component {
+
+  static contextType = CalculatorContext;
   
   render() {
 

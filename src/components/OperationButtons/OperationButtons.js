@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
-import './index.scss';
+import CalculatorContext from "../../context";
+import './OperationButtons.scss';
 
 export default class OperationButtons extends Component {
+
+  static contextType = CalculatorContext;
+
   render() {
 
     const {
