@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
-import Calculator from './Calculator/index';
+import CalculatorManager from "./components/CalculatorManager/CalculatorManager";
+import PhoneControls from './components/PhoneControls/PhoneControls';
+import ExpressionInput from './components/ExpressionInput/ExpressionInput';
+import FunctionButtons from './components/FunctionButtons/FunctionButtons';
+import OperationButtons from './components/OperationButtons/OperationButtons';
+import DigitButtons from './components/DigitButtons/DigitButtons';
 import './App.scss';
 
 export default class App extends Component {
-  
+
   calculator = [
     {
       id: 1,
@@ -93,22 +98,20 @@ export default class App extends Component {
   ];
 
   render() {
-
     return (
-      <div className="phone">
-        <>
-          <div className="visor">
-            <span className="infrared-camera"/>
-            <span className="proximity-sensor"/>
-            <span className="speaker"/>
-            <span className="camera"/>
-            <span className="dot-projector"/>
+        <CalculatorManager>
+          <div className="phone">
+            <PhoneControls/>
+            {this.calculator.map(calc =>
+                <div className="calculator" key={calc.id}>
+                  <ExpressionInput/>
+                  <FunctionButtons functionData={calc.functionData}/>
+                  <DigitButtons digitData={calc.digitData}/>
+                  <OperationButtons operationData={calc.operationData}/>
+                </div>
+            )}
           </div>
-          <div className="volume-button"/>
-          <div className="power-button"/>
-        </>
-        {this.calculator.map(calc => <Calculator calc={calc} key={calc.id} />)}
-      </div>
+        </CalculatorManager>
     );
   }
 }
