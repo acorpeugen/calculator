@@ -13,9 +13,16 @@ export default class OperationButtons extends Component {
     } = this.props;
 
     return (
-      <div className="operation-buttons">
-        {operationData.map(operation => <button key={operation.id} className="btn btn-orange">{operation.value}</button>)}
-      </div>
+        <div className="operation-buttons">
+          {operationData.map(operation =>
+              <button key={operation.id} onClick={this.onOperationClick} className="btn btn-orange">
+                {operation.value}
+              </button>)}
+        </div>
     );
+  }
+
+  onOperationClick = () => {
+    console.log(`Operation Button Press`);
   }
 }

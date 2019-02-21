@@ -14,8 +14,16 @@ export default class DigitButtons extends Component {
 
     return (
       <div className="digit-buttons">
-        {digitData.map(digit => <button key={digit.id} className="btn">{digit.value}</button>)}
+        {digitData.map(digit =>
+            <button key={digit.id} onClick={this.onDigitClick} className="btn">
+              {digit.value}
+            </button>
+        )}
       </div>
     );
+  }
+
+  onDigitClick = () => {
+    console.log(`Digit Button Press`);
   }
 };

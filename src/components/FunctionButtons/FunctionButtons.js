@@ -9,7 +9,6 @@ export default class FunctionButtons extends Component {
   render() {
 
     const {
-      buttonPressed,
       functionData
     } = this.props;
 
@@ -17,12 +16,16 @@ export default class FunctionButtons extends Component {
         <div className="function-buttons">
           {functionData.map(func =>
               <button key={func.id}
-                      onClick={buttonPressed}
+                      onClick={this.onFunctionClick}
                       className="btn btn-gray">
                 {func.value}
               </button>
           )}
         </div>
     );
+  }
+
+  onFunctionClick = () => {
+    console.log(`Function Button Press`);
   }
 };
