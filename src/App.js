@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import CalculatorManager from "./components/CalculatorManager/CalculatorManager";
 import PhoneControls from './components/PhoneControls/PhoneControls';
 import ExpressionInput from './components/ExpressionInput/ExpressionInput';
 import FunctionButtons from './components/FunctionButtons/FunctionButtons';
 import OperationButtons from './components/OperationButtons/OperationButtons';
 import DigitButtons from './components/DigitButtons/DigitButtons';
+import CalculatorManager from "./components/CalculatorManager/CalculatorManager";
 import './App.scss';
 
 export default class App extends Component {
