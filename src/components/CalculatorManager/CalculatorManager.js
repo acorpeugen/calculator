@@ -2,20 +2,30 @@ import React, {Component} from 'react';
 import CalculatorContext from '../../context';
 
 export default class CalculatorManager extends Component {
-
-  state = {};
+  
+  state = {
+    inputValue: 0,
+  };
 
   render() {
     const {
       state
-    } = this.props;
+    } = this;
 
     return (
         <CalculatorContext.Provider value={{
-          ...state
+          ...state,
+          onDigitClick: this.onDigitClick
         }}>
           {this.props.children}
         </CalculatorContext.Provider>
     );
+  }
+  
+  onDigitClick = (inputValue) => {
+    this.setState({
+      inputValue
+    });
+    console.log(`Digit Button Press`);
   }
 }

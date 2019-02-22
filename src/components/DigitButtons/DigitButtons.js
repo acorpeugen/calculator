@@ -15,7 +15,7 @@ export default class DigitButtons extends Component {
     return (
       <div className="digit-buttons">
         {digitData.map(digit =>
-            <button key={digit.id} onClick={this.onDigitClick} className="btn">
+            <button key={digit.id} data-key={digit.value} onClick={this.onDigitClick} className="btn">
               {digit.value}
             </button>
         )}
@@ -23,7 +23,8 @@ export default class DigitButtons extends Component {
     );
   }
 
-  onDigitClick = () => {
-    console.log(`Digit Button Press`);
+  onDigitClick = (e) => {
+    console.log(e.target.dataset.key);
+    this.context.onDigitClick(this.context.inputValue+e.target.dataset.key);
   }
 };

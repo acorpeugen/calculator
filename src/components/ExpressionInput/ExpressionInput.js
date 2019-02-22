@@ -6,17 +6,14 @@ export default class ExpressionInput extends Component {
 
   static contextType = CalculatorContext;
 
-  state = {
-    inputValue: 0,
-  };
-
   render() {
-    const {inputValue} = this.state;
+    const {inputValue} = this.context;
 
     return <div className="expression-input" onChange={this.onInputChange}>{inputValue}</div>
   }
 
-  onInputChange = () => {
+  onInputChange = (e) => {
     console.log(`Change input value`);
+    this.context.onDigitClick(e.target.value);
   };
 }
