@@ -26,6 +26,9 @@ export default class DigitButtons extends Component {
   }
 
   digitClick = (e) => {
+    if(this.context.inputValue === 0) {
+      this.context.inputValue = '';
+    }
     this.context.digitClick(this.context.inputValue + e.target.dataset.key);
     console.log(e.target.dataset.key);
   };

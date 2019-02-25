@@ -4,10 +4,7 @@ import CalculatorContext from '../../context';
 export default class CalculatorManager extends Component {
 
   state = {
-    operator: null,
     inputValue: 0,
-    value: null,
-    waitingForOperand: false,
   };
 
   render() {
@@ -33,8 +30,10 @@ export default class CalculatorManager extends Component {
   }
 
   /* Events Digit Buttons */
-  digitClick = () => {
-
+  digitClick = (inputValue) => {
+    this.setState({
+      inputValue
+    })
   };
 
   digitDote = () => {
@@ -42,7 +41,6 @@ export default class CalculatorManager extends Component {
     if (!(/\./).test(inputValue)) {
       this.setState({
         inputValue: inputValue + '.',
-        waitingForOperand: false
       })
     }
   };
@@ -56,11 +54,15 @@ export default class CalculatorManager extends Component {
 
   };
 
-  plusMinusClick = () => {
+  plusMinusClick = (inputValue) => {
+    this.setState({
+      inputValue: (parseFloat(inputValue) * -1).toString()
+    })
   };
 
   /* Events Operation Buttons */
   operationClick = () => {
-
+    this.setState({
+    })
   };
 }
