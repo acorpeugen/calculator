@@ -2,30 +2,65 @@ import React, {Component} from 'react';
 import CalculatorContext from '../../context';
 
 export default class CalculatorManager extends Component {
-  
+
   state = {
+    operator: null,
     inputValue: 0,
+    value: null,
+    waitingForOperand: false,
   };
 
   render() {
     const {
-      state
+      state,
     } = this;
 
     return (
         <CalculatorContext.Provider value={{
           ...state,
-          onDigitClick: this.onDigitClick
+          digitClick: this.digitClick,
+          digitDote: this.digitDote,
+
+          clearClick: this.clearClick,
+          percentClick: this.percentClick,
+          plusMinusClick: this.plusMinusClick,
+
+          operationClick: this.operationClick,
         }}>
           {this.props.children}
         </CalculatorContext.Provider>
     );
   }
-  
-  onDigitClick = (inputValue) => {
-    this.setState({
-      inputValue
-    });
-    console.log(`Digit Button Press`);
-  }
+
+  /* Events Digit Buttons */
+  digitClick = () => {
+
+  };
+
+  digitDote = () => {
+    const {inputValue} = this.state;
+    if (!(/\./).test(inputValue)) {
+      this.setState({
+        inputValue: inputValue + '.',
+        waitingForOperand: false
+      })
+    }
+  };
+
+  /* Events Function Buttons */
+  clearClick = () => {
+
+  };
+
+  percentClick = () => {
+
+  };
+
+  plusMinusClick = () => {
+  };
+
+  /* Events Operation Buttons */
+  operationClick = () => {
+
+  };
 }
