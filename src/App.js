@@ -1,28 +1,50 @@
 import React, {Component} from 'react';
 import PhoneControls from './components/PhoneControls/PhoneControls';
-import ExpressionInput from './components/ExpressionInput/ExpressionInput';
-import FunctionButtons from './components/FunctionButtons/FunctionButtons';
-import OperationButtons from './components/OperationButtons/OperationButtons';
-import DigitButtons from './components/DigitButtons/DigitButtons';
-import CalculatorManager from "./components/CalculatorManager/CalculatorManager";
+import Input from './components/Input/Input';
+import Buttons from './components/Buttons/Buttons';
+import * as math from 'mathjs';
 import './App.scss';
 
 export default class App extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      calculation: [],
+      sum: 0
+    };
+  }
+
   render() {
 
     return (
-        <CalculatorManager>
-          <div className="phone">
-            <PhoneControls/>
-            <div className="calculator">
-              <ExpressionInput/>
-              <FunctionButtons/>
-              <DigitButtons/>
-              <OperationButtons/>
-            </div>
+        <div className="phone">
+          <PhoneControls/>
+          <div className="calculator">
+            <Input calculation={this.state.calculation} sum={this.state.sum}/>
+            <Buttons triggerSum={this.sum} triggerCalculation={this.calculate} onClick={this.handleClick}/>
           </div>
-        </CalculatorManager>
+        </div>
     );
   }
+
+  calculate = (calculation) => {
+    this.setState({
+      calculation,
+    })
+  };
+
+  sum = (calculation) => {
+
+    if (String(calculation).length === 0) {
+      calculation = 0;
+    } else {
+      calculation = math.eval(calculation);
+    }
+
+    this.setState({
+      sum: calculation
+    })
+  };
 }

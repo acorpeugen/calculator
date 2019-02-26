@@ -1,0 +1,33 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  width: 65px;
+  height: 65px;
+  margin: 5px;
+  padding: 0;
+  background-color: #303030;
+  border-radius: 50px;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  color: #fff;
+  opacity: .8;
+  transition: opacity .15s linear;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.btn-gray {
+  background-color: #919191;
+  color: #1c1c1c;
+}
+
+.btn-orange {
+  background-color: #e28e00;
+}
