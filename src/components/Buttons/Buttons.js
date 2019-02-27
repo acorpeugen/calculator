@@ -11,7 +11,7 @@ export default class Buttons extends Component {
     {id: 5, value: 7, colorClass: 'btn'},
     {id: 6, value: 8, colorClass: 'btn'},
     {id: 7, value: 9, colorClass: 'btn'},
-    {id: 8, value: 'x', colorClass: 'btn btn-orange'},
+    {id: 8, value: '*', colorClass: 'btn btn-orange'},
     {id: 9, value: 4, colorClass: 'btn'},
     {id: 10, value: 5, colorClass: 'btn'},
     {id: 11, value: 6, colorClass: 'btn'},
