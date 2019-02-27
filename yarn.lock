@@ -5342,6 +5342,7 @@ math-random@^1.0.1:
 mathjs@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/mathjs/-/mathjs-5.5.0.tgz#4b4dfc8fb88f1a57d164fc2ff0bf7110c04669e6"
+  integrity sha512-qvCNNcpPFpk85EYFiY9+jyWClFHBNqQlUQ3zKGy/EuLSicuJCmxEtHEQxThL0macmbgl1dzmenrgDbRpGE3QRg==
   dependencies:
     complex.js "2.0.11"
     decimal.js "10.0.2"
